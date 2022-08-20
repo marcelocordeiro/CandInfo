@@ -54,7 +54,6 @@ const Home = () => {
               item
               xs={12}
               sm={5}
-              md={5}
               display="flex"
               justifyContent="center"
               alignItems="center"

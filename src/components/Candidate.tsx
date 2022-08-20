@@ -40,7 +40,7 @@ const Candidate = ({ candidato, link = false }: ICandidateProps) => {
       onClick={() => {
         if (link) navigate(`/candidatos/${candidato.numero}`);
       }}
-      role={link ? "link" : "textbox"}
+      role={link ? "link" : "none"}
       tabIndex={link ? 0 : -1}
       onKeyPress={(event) => {
         if (event.key === "Enter") {
