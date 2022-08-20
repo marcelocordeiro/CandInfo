@@ -1,0 +1,41 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["react-hooks", "testing-library"],
+  "overrides": [
+    {
+      // We enable eslint-plugin-testing-library rules or preset only for matching files!
+      "files": ["src/**/*.{test.jsx,test.tsx}"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "foto": "maria.jpg",
+    "nome": "Maria Souza",
+    "nomeCompleto": "Maria da Silva Souza",
+    "idade": 42,
+    "formacao": "Bacharelado em Economia - UNICAMP",
+    "numero": 99,
+    "estado": "São Paulo",
+    "raca": "Amarelo",
+    "partido": "GGG",
+    "pautas": ["Feminismo", "Educação", "LGBTQIA+"],
+    "orientacao": "Homossexual",
+    "poder": "Senado",
+    "genero": "Feminino"
+  },
+  {
+    "foto": "joao.jpg",
+    "nome": "João Bittencourt",
+    "nomeCompleto": "João Bittencourt",
+    "idade": 61,
+    "formacao": "Bacharelado em Administração - UFPR",
+    "numero": 57,
+    "estado": "São Paulo",
+    "raca": "Branco",
+    "partido": "JJJ",
+    "pautas": ["Segurança", "Economia", "Agrigultura"],
+    "orientacao": "Heterossexual",
+    "poder": "Senado",
+    "genero": "Masculino"
+  },
+  {
+    "foto": "carlos.jpg",
+    "nome": "Carlos Almanaque",
+    "nomeCompleto": "Carlos dos Santos Oliveira de Albuquerque e Almanaque",
+    "idade": 48,
+    "formacao": "Doutorado em Física - UFBA",
+    "numero": 1414,
+    "estado": "Bahia",
+    "raca": "Branco",
+    "partido": "ABC",
+    "pautas": ["Educação", "Meio-Ambiente", "Saúde"],
+    "orientacao": "Homossexual",
+    "poder": "Câmara dos Deputados",
+    "genero": "Masculino"
+  },
+  {
+    "foto": "sonia.jpg",
+    "nome": "Professora Sônia",
+    "nomeCompleto": "Sônia Almeida",
+    "idade": 51,
+    "formacao": "Mestrado em Pedagogia - UniCentral",
+    "numero": 1234,
+    "estado": "Mato Grosso do Sul",
+    "raca": "Indígeno",
+    "partido": "ABC",
+    "pautas": ["Meio-Ambiente", "Educação", "Povos Indígenas"],
+    "orientacao": "Assexual",
+    "poder": "Câmara dos Deputados",
+    "genero": "Feminino"
+  }
+]
