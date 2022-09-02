@@ -9,6 +9,9 @@ import {
   Select,
   MenuItem,
   SelectChangeEvent,
+  Checkbox,
+  ListItemText,
+  OutlinedInput,
 } from "@mui/material";
 import { Theme, useTheme } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
@@ -33,16 +36,34 @@ const getStyles = (pauta1: string, pauta2: readonly string[], theme: Theme) => {
   };
 };
 
+const listaDePautas = [
+  "Educação",
+  "Saúde",
+  "Segurança Pública",
+  "Meio Ambiente",
+  "Direitos Humanos",
+  "Direitos das Mulheres",
+  "Direitos LGBTQIA+",
+  "Direitos dos Idosos",
+  "Direitos dos Animais",
+  "Direitos dos Deficientes",
+  "Direitos dos Trabalhadores",
+  "Direitos dos Imigrantes",
+  "Direitos dos Indígenas",
+];
+
 const Home = () => {
   const theme = useTheme();
 
-  const [pautas, setPautas] = useState<string[]>(["Todas"]);
+  const [pautasSelecionadas, setPautasSelecionadas] = useState<string[]>([]);
 
-  const handleChange = (event: SelectChangeEvent<typeof pautas>) => {
+  const handleChange = (
+    event: SelectChangeEvent<typeof pautasSelecionadas>
+  ) => {
     const {
       target: { value },
     } = event;
-    setPautas(typeof value === "string" ? value.split(",") : value);
+    setPautasSelecionadas(typeof value === "string" ? value.split(",") : value);
   };
 
   return (
@@ -283,60 +304,29 @@ const Home = () => {
               <Select
                 sx={{ width: "100%" }}
                 multiple
-                value={pautas}
+                value={pautasSelecionadas}
                 onChange={handleChange}
                 MenuProps={MenuProps}
+                input={<OutlinedInput />}
+                renderValue={(selected) =>
+                  selected.length ? selected.sort().join(", ") : "Todas"
+                }
+                title={pautasSelecionadas.sort().join(", ")}
+                displayEmpty
                 aria-label="Selecionar pautas"
               >
-                <MenuItem
-                  key={1}
-                  value={"Todas"}
-                  style={getStyles("Todas", pautas, theme)}
-                >
-                  Todas
-                </MenuItem>
-                <MenuItem
-                  key={2}
-                  value={"Meio Ambiente"}
-                  style={getStyles("Meio Ambiente", pautas, theme)}
-                >
-                  Meio Ambiente
-                </MenuItem>
-                <MenuItem
-                  key={3}
-                  value={"Feminismo"}
-                  style={getStyles("Feminismo", pautas, theme)}
-                >
-                  Feminismo
-                </MenuItem>
-                <MenuItem
-                  key={4}
-                  value={"LGBTQIA+"}
-                  style={getStyles("LGBTQIA+", pautas, theme)}
-                >
-                  LGBTQIA+
-                </MenuItem>
-                <MenuItem
-                  key={5}
-                  value={"Pró-Escolha"}
-                  style={getStyles("Pró-Escolha", pautas, theme)}
-                >
-                  Pró-Escolha
-                </MenuItem>
-                <MenuItem
-                  key={6}
-                  value={"Pró-Vida"}
-                  style={getStyles("Pró-Vida", pautas, theme)}
-                >
-                  Pró-Vida
-                </MenuItem>
-                <MenuItem
-                  key={7}
-                  value={"..."}
-                  style={getStyles("...", pautas, theme)}
-                >
-                  ...
-                </MenuItem>
+                {listaDePautas.sort().map((pauta) => (
+                  <MenuItem
+                    key={pauta}
+                    value={pauta}
+                    style={getStyles(pauta, pautasSelecionadas, theme)}
+                  >
+                    <Checkbox
+                      checked={pautasSelecionadas.indexOf(pauta) > -1}
+                    />
+                    <ListItemText primary={pauta} />
+                  </MenuItem>
+                ))}
               </Select>
             </Grid>
             <Grid

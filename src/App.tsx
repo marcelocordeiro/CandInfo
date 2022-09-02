@@ -52,7 +52,6 @@ theme = createTheme(theme, {
       color: theme.palette.primary.dark,
       fontWeight: 700,
     },
-    // fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
   },
 });
 

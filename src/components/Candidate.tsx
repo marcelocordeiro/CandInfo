@@ -53,6 +53,7 @@ const Candidate = ({ candidato, link = false }: ICandidateProps) => {
           <img
             src={require(`../assets/${candidato.foto}`)}
             alt={`Foto de ${candidato.nome}`}
+            title={candidato.nome}
             style={{ width: "100%" }}
           />
         </Grid>
